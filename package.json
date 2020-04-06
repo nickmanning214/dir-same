@@ -1,6 +1,6 @@
 {
   "name": "dir-same",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Check if two directories are identical",
   "main": "index.js",
   "scripts": {
