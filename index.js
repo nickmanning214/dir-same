@@ -1,4 +1,4 @@
-const walkSync = require('./util/walkSync.js');
+const walkSync = require('walk-sync');
 const deepEqual = require('deep-equal');
 const fs = require('fs');
 
