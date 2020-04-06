@@ -1,0 +1,17 @@
+{
+  "name": "dir-same",
+  "version": "0.0.0",
+  "description": "Check if two directories are identical",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests/test.js"
+  },
+  "author": "Nick Manning",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.1.1"
+  },
+  "dependencies": {
+    "deep-equal": "^2.0.2"
+  }
+}
