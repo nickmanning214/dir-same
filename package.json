@@ -12,7 +12,6 @@
     "mocha": "^7.1.1"
   },
   "dependencies": {
-    "deep-equal": "^2.0.2",
-    "walk-sync": "^2.0.2"
+    "deep-equal": "^2.0.2"
   }
 }
