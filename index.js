@@ -12,8 +12,8 @@ module.exports = function(originPathBase,originalPath,otherPathBase,otherPath){
 
     
 
-    const originalPaths = walkDir(path.join(__dirname,'tests'),originalPath)
-    const otherPaths = walkDir(path.join(__dirname,'tests'),otherPath);
+    const originalPaths = walkDir(originPathBase,originalPath)
+    const otherPaths = walkDir(otherPathBase,otherPath);
 
     
     const originalPathsLocal = originalPaths.map(path=>path.substr(originPathBase.length+originalPath.length+1))
