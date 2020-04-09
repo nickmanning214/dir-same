@@ -28,8 +28,8 @@ const fs = require('fs');
 const walk = require('@nickmanning214/walk-tree');
 const path = require('path');
 
-function walkDir(dirName){
-  return walk(dirName,(tree,Node)=>new Node({parentPath:path.join(__dirname,'..','tests')},dirName),(tree,parentNode,Node)=>{
+function walkDir(parentPath,dirName){
+  return walk(dirName,(tree,Node)=>new Node({parentPath},dirName),(tree,parentNode,Node)=>{
 
     const dirName = path.join(parentNode.metaData.parentPath,parentNode.value);
     if (fs.lstatSync(dirName).isDirectory()){

@@ -21,37 +21,37 @@ const changeFileContents ='change-file-contents';
 
 describe('identical directory', function(){
     it('should be identical to the original directory',function(){
-        assert.ok(dirSame(originalDirectory,identicalDirectory));
+        assert.ok(dirSame(__dirname,originalDirectory,__dirname,identicalDirectory));
     });
 })
 
 describe('change-a-dir-name', function(){
     it('should be flagged as unidentical to the original directory',function(){
-        assert.ok(dirSame(originalDirectory,changeADirName) === false);
+        assert.ok(dirSame(__dirname,originalDirectory,__dirname,changeADirName) === false);
     })
 })
 
 describe('change-a-file-name', function(){
     it('should be flagged as unidentical to the original directory',function(){
-        assert.ok(dirSame(originalDirectory,changeAFileName) === false);
+        assert.ok(dirSame(__dirname,originalDirectory,__dirname,changeAFileName) === false);
     })
 })
 
 describe('change-dir-contents', function(){
     it('should be flagged as unidentical to the original directory',function(){
-        assert.ok(dirSame(originalDirectory,changeDirContents) === false);
+        assert.ok(dirSame(__dirname,originalDirectory,__dirname,changeDirContents) === false);
     })
 })
 
 describe('change-dir-contents-empty-dir', function(){
     it('should be flagged as unidentical to the original directory',function(){
-        assert.ok(dirSame(originalDirectory,changeDirContentsEmptyDir) === false);
+        assert.ok(dirSame(__dirname,originalDirectory,__dirname,changeDirContentsEmptyDir) === false);
     })
 })
 
 describe('change-file-contents', function(){
     it('should be flagged as unidentical to the original directory',function(){
-        assert.ok(dirSame(originalDirectory,changeFileContents) === false);
+        assert.ok(dirSame(__dirname,originalDirectory,__dirname,changeFileContents) === false);
     })
 })
 

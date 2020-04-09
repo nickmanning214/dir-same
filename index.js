@@ -8,19 +8,16 @@ function pathToFileContents(path){
     return fs.lstatSync(path).isDirectory()?'':fs.readFileSync(path).toString();
 }
 
-module.exports = function(originalPath,otherPath){
+module.exports = function(originPathBase,originalPath,otherPathBase,otherPath){
 
     
 
-    const originalPaths = walkDir(originalPath)
-    const otherPaths = walkDir(otherPath);
+    const originalPaths = walkDir(path.join(__dirname,'tests'),originalPath)
+    const otherPaths = walkDir(path.join(__dirname,'tests'),otherPath);
 
-    const originPathBase = path.join(__dirname,'tests',originalPath);
-    const otherPathBase = path.join(__dirname,'tests',otherPath);
     
-    const originalPathsLocal = originalPaths.map(path=>path.substr(originPathBase.length))
-    const otherPathsLocal = otherPaths.map(path=>path.substr(otherPathBase.length))
-
+    const originalPathsLocal = originalPaths.map(path=>path.substr(originPathBase.length+originalPath.length+1))
+    const otherPathsLocal = otherPaths.map(path=>path.substr(otherPathBase.length+otherPath.length+1))
 
 
 
