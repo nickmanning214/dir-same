@@ -1,5 +1,5 @@
 {
-  "name": "dir-same",
+  "name": "@nickmanning214/dir-same",
   "version": "0.0.1",
   "description": "Check if two directories are identical",
   "main": "index.js",
@@ -12,6 +12,7 @@
     "mocha": "^7.1.1"
   },
   "dependencies": {
+    "@nickmanning214/walk-tree": "0.0.0",
     "deep-equal": "^2.0.2"
   }
 }

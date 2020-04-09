@@ -1,27 +1,32 @@
-const walkSync = require('walk-sync');
+const walkDir = require('./util/walkDir.js');
+
 const deepEqual = require('deep-equal');
 const fs = require('fs');
+const path = require('path');
 
 function pathToFileContents(path){
-    return fs.readFileSync(path);
+    return fs.lstatSync(path).isDirectory()?'':fs.readFileSync(path).toString();
 }
 
 module.exports = function(originalPath,otherPath){
 
-  
+    
 
-    const originalPaths = walkSync(originalPath).sort();
-    const otherPaths = walkSync(otherPath).sort();
+    const originalPaths = walkDir(originalPath)
+    const otherPaths = walkDir(otherPath);
 
-    const originalPathsEndings = originalPaths.map(path=>path.substr(originalPath.length))
-    const otherPathsEndings = otherPaths.map(path=>path.substr(otherPath.length))
+    const originPathBase = path.join(__dirname,'tests',originalPath);
+    const otherPathBase = path.join(__dirname,'tests',otherPath);
+    
+    const originalPathsLocal = originalPaths.map(path=>path.substr(originPathBase.length))
+    const otherPathsLocal = otherPaths.map(path=>path.substr(otherPathBase.length))
 
-    console.log(otherPath,otherPathsEndings)
 
-    if (deepEqual(originalPathsEndings,otherPathsEndings)) {
+
+
+    if (deepEqual(originalPathsLocal,otherPathsLocal)) {
         const originalPathContents = originalPaths.map(pathToFileContents);
         const otherPathContents = otherPaths.map(pathToFileContents)
-
         if (deepEqual(originalPathContents,otherPathContents)) {
 
             return true;
