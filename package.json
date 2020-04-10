@@ -1,6 +1,6 @@
 {
   "name": "@nickmanning214/dir-same",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Check if two directories are identical",
   "main": "index.js",
   "scripts": {
