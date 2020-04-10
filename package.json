@@ -12,7 +12,7 @@
     "mocha": "^7.1.1"
   },
   "dependencies": {
-    "@nickmanning214/walk-tree": "0.0.0",
+    "@nickmanning214/walk-tree": "0.0.1",
     "deep-equal": "^2.0.2"
   }
 }
